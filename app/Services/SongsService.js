@@ -14,6 +14,7 @@ class SongsService {
     $.getJSON(url)
       .then(res => {
         ProxyState.songs = res.results.map(rawData => new Song(rawData));
+        console.log(ProxyState.songs);
       })
       .catch(err => {
         throw new Error(err);
@@ -25,9 +26,11 @@ class SongsService {
    */
   async getMySongs() {
     try {
-      
+      const res = await sandBoxApi.get("")
+      ProxyState.playlist = res.data
+      //console.log(ProxyState.playlist)
     } catch (error) {
-      
+      console.error(error)
     }
   }
 

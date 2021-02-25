@@ -4,7 +4,9 @@ import songService from "../Services/SongsService.js";
 
 //Search results to page (search entered in search bar(form))
 function _drawResults() {
-  
+  let songSearch = ProxyState.songs
+  let template = ""
+  songSearch.forEach(s=> template += `<li> ${s.title} </li>`)
 }
 
 //Saved songs to page

@@ -12,20 +12,20 @@ export default class Song {
 
   get Template() {
     return /*html*/ `
-      <div class="w-100 bg-secondary text-light p-3 d-flex">
+      <div class="w-100 bg-gray text-light p-3 d-flex">
         <img width="50px" height="50px" src="${this.albumArt}">
         <div>
             <div class="ml-1">${this.title}</div>
             <small class="ml-2">${this.artist}</small>
         </div>
-        <button onclick="app.songsController.playSong('${this._id}')" class="ml-auto">Play</button>
+        <button onclick="app.songsController.playSong('${this._id}')" class="ml-auto btn btn-info">Play</button>
       </div>
     `;
   }
 
   get playlistTemplate() {
     return /*html*/ `
-      <div class="h-100 bg-dark text-light p-3 d-flex">
+      <div class="bg-primary text-light p-3 d-flex">
         <img src="${this.albumArt}" width="50px" height="50px">
         <div>
             <div class="ml-1">${this.title}</div>

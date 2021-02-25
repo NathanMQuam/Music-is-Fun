@@ -6,15 +6,16 @@ import songService from "../Services/SongsService.js";
 function _drawResults() {
   let songSearch = ProxyState.songs
   let template = ""
-  songSearch.forEach(s=> template += `<li> ${s.title} </li>`)
+  songSearch.forEach(s=> template += s.Template)
+  document.getElementById("songs").innerHTML = template
 }
 
 //Saved songs to page
 function _drawPlaylist() {
   let mySongs = ProxyState.playlist
   let template = ""
-  mySongs.forEach(s=> template += `<li> ${s.title} </li>`)
-
+  mySongs.forEach(s=> template += s.playlistTemplate)
+  document.getElementById("playlist").innerHTML = template
 }
 
 //Public

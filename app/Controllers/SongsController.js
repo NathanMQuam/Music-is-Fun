@@ -30,7 +30,7 @@ function _drawCurrentSong(song) {
     <div>${song.title}</div>
     <small>${song.artist}</small>
     <div>${song.price}</div>
-    <button onclick="console.error('Eyy, theres no music yet!')">Add to My Music</button>
+    <button onclick="app.songsController.addSong(${song._id})">Add to My Music</button>
     <div class="bg-light text-dark">Music player</div>
   `
 }

@@ -12,7 +12,7 @@ export default class Song {
 
   get Template() {
     return /*html*/ `
-      <div class="w-100 bg-dark text-light p-3 d-flex">
+      <div class="w-100 bg-secondary text-light p-3 d-flex">
         <img width="50px" height="50px" src="${this.albumArt}">
         <div>
             <div class="ml-1">${this.title}</div>

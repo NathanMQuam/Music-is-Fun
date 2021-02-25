@@ -11,9 +11,16 @@ export default class Song {
   }
 
   get Template() {
-    return `
-
-        `;
+    return /*html*/ `
+      <div class="w-100 bg-dark text-light p-3 d-flex">
+        <img width="50px" height="50px" src="${this.albumArt}">
+        <div>
+            <div class="ml-1">${this.title} <small>${this.album}</small></div>
+            <small class="ml-2">${this.artist}</small>
+        </div>
+        <button class="ml-auto">Add</button>
+      </div>
+    `;
   }
 
   get playlistTemplate() {

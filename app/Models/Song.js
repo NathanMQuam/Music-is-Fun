@@ -18,7 +18,7 @@ export default class Song {
             <div class="ml-1">${this.title}</div>
             <small class="ml-2">${this.artist}</small>
         </div>
-        <button onclick="app.songsController.playSong(${this._id})" class="ml-auto">Play</button>
+        <button onclick="app.songsController.playSong('${this._id}')" class="ml-auto">Play</button>
       </div>
     `;
   }
@@ -31,7 +31,7 @@ export default class Song {
             <div class="ml-1">${this.title}</div>
             <small class="ml-2">${this.artist}</small>
         </div>
-        <div class="ml-auto">
+        <div class="ml-auto" onclick="app.songsController.removeSong('${this._id}')">
             <i>&times;</i>
         </div>
       </div>

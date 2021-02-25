@@ -39,9 +39,14 @@ class SongsService {
    * Afterwords it will update the store to reflect saved info
    * @param {string} id
    */
-  addSong(id) {
-    let thatSong = ProxyState.songs.find(s => s._id == id)
-    ProxyState.playlist = [thatSong, ...ProxyState.playlist]
+  async addSong(id) {
+    try {
+      let thatSong = ProxyState.songs.find(s => s._id == id)
+      await sandBoxApi.post('', thatSong)
+      ProxyState.playlist = [thatSong, ...ProxyState.playlist]
+    } catch (error) {
+      console.error(error)
+    }
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
   }
@@ -51,8 +56,9 @@ class SongsService {
    * Afterwords it will update the store to reflect saved info
    * @param {string} id
    */
-  removeSong(id) {
+  async removeSong(id) {
     let delSongIndex = ProxyState.playlist.findIndex(s => s._id == id)
+    await sandBoxApi.delete(id)
     ProxyState.playlist.splice(delSongIndex, 1)
     ProxyState.playlist = ProxyState.playlist
     //TODO Send the id to be deleted from the server then update the store

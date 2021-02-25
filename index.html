@@ -11,7 +11,7 @@
     <title>music-is-fun</title>
 </head>
 
-<body>
+<body style="max-height: 100vh; overflow:hidden;">
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
@@ -27,9 +27,9 @@
 
 
 
-    <main class="container-fluid mh-100">
-        <section class="row">
-            <div class="col-4">
+    <main class="container-fluid mh-100" style="max-height: 100vh; overflow:hidden;">
+        <section class="row" style="max-height: 100vh; overflow:hidden;">
+            <div class="col-4" style="max-height: 100vh; overflow:hidden;">
                 <form onsubmit="app.songsController.search(event)">
                     <input type="text" class="form-control" name="query" placeholder="Search For Music" />
                     <button class="btn btn-success mt-1 form-control" type="submit">
@@ -53,9 +53,9 @@
                     <button>Add to My Music</button>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-4" style="max-height: 100vh; overflow:hidden;">
                 <h3 class="text-center">Playlist</h3>
-                <div class="col-12 m-0" id="playlist">
+                <div class="col-12 m-0" id="playlist" style="max-height: 100vh; overflow:hidden;">
                     <!-- template for playlist -->
                 </div>
             </div>

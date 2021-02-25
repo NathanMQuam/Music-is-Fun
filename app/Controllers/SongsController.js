@@ -1,11 +1,14 @@
 import songService from "../Services/SongsService.js";
 
-//Private
-/**Draws the Search results to the page */
-function _drawResults() { }
+//Search results to page (search entered in search bar(form))
+function _drawResults() {
 
-/**Draws the Users saved songs to the page */
-function _drawPlaylist() { }
+}
+
+//Saved songs to page
+function _drawPlaylist() {
+
+}
 
 //Public
 export default class SongsController {
@@ -15,7 +18,7 @@ export default class SongsController {
 
   /**Takes in the form submission event and sends the query to the service */
   search(e) {
-    //NOTE You dont need to change this method
+    //NOTE You don't need to change this method
     e.preventDefault();
     try {
       songService.getMusicByQuery(e.target.query.value);

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/custom.css">
     <title>music-is-fun</title>
 </head>
 
@@ -38,18 +39,42 @@
                 <h3 class="text-center">Search Results</h3>
                 <div id="songs" class="col-12 m-0 overflow-auto mh-100">
                     <!-- template to generate -->
+                    <div class="h-100 bg-dark text-light p-3 d-flex">
+                        <img width="50px" height="50px">
+                        <div>
+                            <div>Title</div>
+                            <small>Arist</small>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-4">
                 <h3 class="text-center">Now Playing</h3>
-                <div id="now-playing" class="col-12 m-0">
+                <div id="now-playing" class="col-12 m-0 p-3 text-center bg-dark text-light">
                     <!-- template to generate -->
+                    <img width="200px" height="200px"><br/>
+                    <small>Album</small>
+                    <div>Title</div>
+                    <div>Artist</div>
+                    <div>Price</div>
+                    <button>Add to My Music</button>
+                    <div class="bg-light text-dark">Music player</div>
                 </div>
             </div>
             <div class="col-4">
                 <h3 class="text-center">Playlist</h3>
                 <div class="col-12 m-0" id="playlist">
                     <!-- template for playlist -->
+                    <div class="h-100 bg-dark text-light d-flex">
+                        <img width="50px" height="50px">
+                        <div>
+                            <div>Title</div>
+                            <small>Arist</small>
+                        </div>
+                        <div class="ml-auto">
+                            <i>&times;</i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

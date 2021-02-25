@@ -29,10 +29,10 @@ function _drawCurrentSong(song) {
     <small>${song.album}</small>
     <div>${song.title}</div>
     <small>${song.artist}</small>
-    <div>${song.price}</div>
+    <div>$${song.price}</div>
     <button onclick="app.songsController.addSong(${song._id})">Add to My Music</button>
     <audio controls>
-      <source src="${song.preview}" type="audio/">
+      <source src="${song.preview}">
       Your browser does not support this audio file.
     </audio>
   `

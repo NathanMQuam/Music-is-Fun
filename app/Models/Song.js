@@ -15,7 +15,7 @@ export default class Song {
       <div class="w-100 bg-dark text-light p-3 d-flex">
         <img width="50px" height="50px" src="${this.albumArt}">
         <div>
-            <div class="ml-1">${this.title} <small>${this.album}</small></div>
+            <div class="ml-1">${this.title}</div>
             <small class="ml-2">${this.artist}</small>
         </div>
         <button class="ml-auto">Add</button>
@@ -24,8 +24,17 @@ export default class Song {
   }
 
   get playlistTemplate() {
-    return `
-
-        `;
+    return /*html*/ `
+      <div class="h-100 bg-dark text-light p-3 d-flex">
+        <img src="${this.albumArt}" width="50px" height="50px">
+        <div>
+            <div class="ml-1">${this.title}</div>
+            <small class="ml-2">${this.artist}</small>
+        </div>
+        <div class="ml-auto">
+            <i>&times;</i>
+        </div>
+      </div>
+    `;
   }
 }

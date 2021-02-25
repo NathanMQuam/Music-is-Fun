@@ -18,11 +18,7 @@ export default class Song {
             <div class="ml-1">${this.title}</div>
             <small class="ml-2">${this.artist}</small>
         </div>
-<<<<<<< HEAD
         <button onclick="app.songsController.playSong(${this._id})" class="ml-auto">Play</button>
-=======
-        <button class="ml-auto">Play</button>
->>>>>>> 11d08dbf2ecf5cfde112972486a43468114e6452
       </div>
     `;
   }

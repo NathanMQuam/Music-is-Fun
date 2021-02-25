@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import Song from "../Models/Song.js";
 import service from "../Services/SongsService.js";
 import songService from "../Services/SongsService.js";
 
@@ -6,7 +7,7 @@ import songService from "../Services/SongsService.js";
 function _drawResults() {
   let songSearch = ProxyState.songs
   let template = ""
-  songSearch.forEach(s=> template += s.Template)
+  songSearch.forEach(s => template += s.Template)
   document.getElementById("songs").innerHTML = template
 }
 
@@ -14,9 +15,29 @@ function _drawResults() {
 function _drawPlaylist() {
   let mySongs = ProxyState.playlist
   let template = ""
-  mySongs.forEach(s=> template += s.playlistTemplate)
+  mySongs.forEach(s => template += s.playlistTemplate)
   document.getElementById("playlist").innerHTML = template
 }
+
+// Draws current song to "Now-Playing"
+/**
+ * @param {Song} song
+ */
+function _drawCurrentSong(song) {
+  document.getElementById('now-playing').innerHTML = /*html*/ `
+    <img src='${song.albumArt}' width="200px" height="200px"><br/>
+    <small>${song.album}</small>
+    <div>${song.title}</div>
+    <small>${song.artist}</small>
+    <div>${song.price}</div>
+    <button onclick="console.error('Eyy, theres no music yet!')">Add to My Music</button>
+    <div class="bg-light text-dark">Music player</div>
+  `
+}
+
+
+
+
 
 //Public
 export default class SongsController {
@@ -52,5 +73,9 @@ export default class SongsController {
    */
   removeSong(id) {
     songService.removeSong(id)
+  }
+
+  playSong(id) {
+    _drawCurrentSong(ProxyState.songs.find(s => s._id == id))
   }
 }

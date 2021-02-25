@@ -30,7 +30,7 @@ function _drawCurrentSong(song) {
     <div>${song.title}</div>
     <small>${song.artist}</small>
     <div>$${song.price}</div>
-    <button onclick="app.songsController.addSong(${song._id})">Add to My Music</button>
+    <button onclick="app.songsController.addSong('${song._id}')">Add to My Music</button>
     <audio controls>
       <source src="${song.preview}">
       Your browser does not support this audio file.

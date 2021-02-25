@@ -27,7 +27,7 @@ class SongsService {
   async getMySongs() {
     try {
       const res = await sandBoxApi.get("")
-      ProxyState.playlist = res.data
+      ProxyState.playlist = res.data.map(s => new Song(s))
       //console.log(ProxyState.playlist)
     } catch (error) {
       console.error(error)
@@ -42,6 +42,8 @@ class SongsService {
   async addSong(id) {
     try {
       let thatSong = ProxyState.songs.find(s => s._id == id)
+      console.log(thatSong)
+      // FIXME: HELP
       await sandBoxApi.post('', thatSong)
       ProxyState.playlist = [thatSong, ...ProxyState.playlist]
     } catch (error) {
@@ -57,10 +59,14 @@ class SongsService {
    * @param {string} id
    */
   async removeSong(id) {
-    let delSongIndex = ProxyState.playlist.findIndex(s => s._id == id)
-    await sandBoxApi.delete(id)
-    ProxyState.playlist.splice(delSongIndex, 1)
-    ProxyState.playlist = ProxyState.playlist
+    try {
+      let delSongIndex = ProxyState.playlist.findIndex(s => s._id == id)
+      await sandBoxApi.delete(id)
+      ProxyState.playlist.splice(delSongIndex, 1)
+      ProxyState.playlist = ProxyState.playlist
+    } catch (error) {
+      console.error(error)
+    }
     //TODO Send the id to be deleted from the server then update the store
   }
 }

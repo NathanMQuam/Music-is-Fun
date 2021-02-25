@@ -40,6 +40,8 @@ class SongsService {
    * @param {string} id
    */
   addSong(id) {
+    let thatSong = ProxyState.songs.find(s => s._id == id)
+    ProxyState.playlist = [thatSong, ...ProxyState.playlist]
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
   }
@@ -50,6 +52,9 @@ class SongsService {
    * @param {string} id
    */
   removeSong(id) {
+    let delSongIndex = ProxyState.playlist.findIndex(s => s._id == id)
+    ProxyState.playlist.splice(delSongIndex, 1)
+    ProxyState.playlist = ProxyState.playlist
     //TODO Send the id to be deleted from the server then update the store
   }
 }

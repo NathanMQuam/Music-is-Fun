@@ -27,16 +27,16 @@
 
 
 
-    <main class="container-fluid mh-100" style="max-height: 100%; overflow:hidden;">
-        <section class="row" style="max-height: 100%; overflow:hidden;">
-            <div class="col-4" style="max-height: 100%; overflow:hidden;">
+    <main class="container-fluid mh-100" style="max-height: 100vh; overflow:hidden;">
+        <section class="row" style="max-height: 100vh; overflow:hidden;">
+            <div class="col-4 bg-dark" style="max-height: 100vh; overflow:hidden;">
                 <form onsubmit="app.songsController.search(event)">
                     <input type="text" class="form-control" name="query" placeholder="Search For Music" />
                     <button class="btn btn-success mt-1 form-control" type="submit">
                         Search
                     </button>
                 </form>
-                <h3 class="text-center">Search Results</h3>
+                <h3 class="text-center text-light">Search Results</h3>
                 <div id="songs">
                     <!-- template to generate -->
                 </div>
@@ -45,7 +45,7 @@
                 <h3 class="text-center">Now Playing</h3>
                 <div id="now-playing" class="col-12 m-0 p-3 text-center bg-dark text-light">
                     <!-- template to generate -->
-                    <img width="200px" height="200px"><br/>
+                    <img width="200px" height="200px"><br />
                     <small>Album</small>
                     <div>Title</div>
                     <small>Artist</small>
@@ -53,7 +53,7 @@
                     <button class="btn btn-info">Add to My Music</button>
                 </div>
             </div>
-            <div class="col-4" style="max-height: 100vh; overflow:hidden;">
+            <div class="col-4 bg-dark text-light" style="max-height: 100vh; overflow:hidden;">
                 <h3 class="text-center">Playlist</h3>
                 <div class="col-12 m-0" id="playlist" style="max-height: 100vh; overflow:hidden;">
                     <!-- template for playlist -->
